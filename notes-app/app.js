@@ -1,4 +1,3 @@
-const fileSystem = require('fs');
+const firstName = require('./utils.js');
 
-// fileSystem.writeFileSync('notes.txt', 'My name is Taejin.')
-fileSystem.appendFileSync('notes.txt', '\nWhat is your name?')
+console.log(firstName)
