@@ -5,8 +5,10 @@ const msg = getNotes();
 
 console.log(msg);
 
-const chalkMsg = chalk.blue.inverse.bold('Error!')
+const chalkMsg = chalk.blue.inverse.bold('Success!')
 console.log(chalkMsg);
+
+console.log(process.argv)
 
 
 // const add = require('./utils.js');
