@@ -6,3 +6,6 @@ request({ url: url, json: true }, function (error, response) {
     // console.log(response.body.current)
     console.log(response.body.current.weather_descriptions[0] + '. It is currently ' + response.body.current.temperature + ' degrees out. It feels like ' + response.body.current.feelslike + ' degrees out.');
 })
+
+// Geocoding
+// Address -> Lat / Long -> Weather
