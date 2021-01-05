@@ -12,19 +12,6 @@ const geocode = require('./utils/geocode');
 //     }
 // })
 
-// const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/toronto.json?access_token=pk.eyJ1IjoidGFlamluNTMxNCIsImEiOiJja2pqNzRidTQzNnh3MnpuMGUzMm9veGhsIn0.9NGVRrMyQipyH-wwenIsWA'
-// request({ url: geocodeURL, json: true }, (error, response) => {
-//     if (error) {
-//         console.log('Unable to connect to location services!');
-//     } else if (response.body.features.length === 0) {
-//         console.log('Unable to find the location!')
-//     } else {
-//         const latitude = response.body.features[0].center[0];
-//         const longitude = response.body.features[0].center[1];
-//         console.log(latitude, longitude);
-//     }
-// })
-
 geocode('toronto', (error, data) => {
     console.log('Error', error);
     console.log('Data', data)
