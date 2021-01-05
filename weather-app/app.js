@@ -9,3 +9,9 @@ request({ url: url, json: true }, function (error, response) {
 
 // Geocoding
 // Address -> Lat / Long -> Weather
+
+const geocodingURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoidGFlamluNTMxNCIsImEiOiJja2pqNzRidTQzNnh3MnpuMGUzMm9veGhsIn0.9NGVRrMyQipyH-wwenIsWA'
+request({ url: geocodingURL, json: true }, function (error, response) {
+    console.log('Lat: ' + response.body.features[0].center[0]);
+    console.log('Long: ' + response.body.features[0].center[1])
+})
