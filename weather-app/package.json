@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "chalk": "^4.1.0",
     "postman-request": "^2.88.1-postman.28"
   },
   "devDependencies": {},
