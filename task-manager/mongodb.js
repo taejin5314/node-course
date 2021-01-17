@@ -41,24 +41,24 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     //     console.log(result.ops);
     // })
 
-    db.collection('users').insertMany([
-        {
-            description: 'This is user database.',
-            completed: false
-        },
-        {
-            description: 'This is completed data.',
-            completed: true
-        },
-        {
-            description: 'This is incompleted data.',
-            completed: false
-        }
-    ], (error, result) => {
-        if (error) {
-            return console.log('Unable to insert tasks!')
-        }
-        console.log(result.ops);
-    })
+    // db.collection('users').insertMany([
+    //     {
+    //         description: 'This is user database.',
+    //         completed: false
+    //     },
+    //     {
+    //         description: 'This is completed data.',
+    //         completed: true
+    //     },
+    //     {
+    //         description: 'This is incompleted data.',
+    //         completed: false
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         return console.log('Unable to insert tasks!')
+    //     }
+    //     console.log(result.ops);
+    // })
 
 })
