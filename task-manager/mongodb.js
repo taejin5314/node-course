@@ -54,6 +54,11 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
             description: 'This is incompleted data.',
             completed: false
         }
-    ])
+    ], (error, result) => {
+        if (error) {
+            return console.log('Unable to insert tasks!')
+        }
+        console.log(result.ops);
+    })
 
 })
