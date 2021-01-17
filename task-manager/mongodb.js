@@ -33,7 +33,13 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
             name: 'Gunther',
             age: 32
         }
-    ])
+    ], (error, result) => {
+        if (error) {
+            return console.log('Unable to insert documents!');
+        }
+
+        console.log(result.ops);
+    })
 
 
 })
