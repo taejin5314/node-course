@@ -20,51 +20,12 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     const db = client.db(databaseName);
 
-    // db.collection('users').insertOne({
-    //     name: 'Taejin',
-    //     age: 26
-    // }, (error, result) => {
-    //     if (error) {
-    //         return console.log('Unable to insert user')
-    //     }
+    db.collection('users').findOne({ _id: new ObjectID('6000a590c976ae2e40e67e97') }, (error, user) => {
+        if (error) {
+            return console.log('Unable to fetch!')
+        }
 
-    //     console.log(result.ops);
-    // })
-
-    // db.collection('users').insertMany([
-    //     {
-    //         name: 'Jen',
-    //         age: 28
-    //     }, {
-    //         name: 'Gunther',
-    //         age: 32
-    //     }
-    // ], (error, result) => {
-    //     if (error) {
-    //         return console.log('Unable to insert documents!');
-    //     }
-
-    //     console.log(result.ops);
-    // })
-
-    // db.collection('users').insertMany([
-    //     {
-    //         description: 'This is user database.',
-    //         completed: false
-    //     },
-    //     {
-    //         description: 'This is completed data.',
-    //         completed: true
-    //     },
-    //     {
-    //         description: 'This is incompleted data.',
-    //         completed: false
-    //     }
-    // ], (error, result) => {
-    //     if (error) {
-    //         return console.log('Unable to insert tasks!')
-    //     }
-    //     console.log(result.ops);
-    // })
+        console.log(user);
+    })
 
 })
