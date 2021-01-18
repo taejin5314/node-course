@@ -20,12 +20,17 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     const db = client.db(databaseName);
 
-    db.collection('users').findOne({ _id: new ObjectID('6000a590c976ae2e40e67e97') }, (error, user) => {
-        if (error) {
-            return console.log('Unable to fetch!')
-        }
+    // db.collection('users').findOne({ _id: new ObjectID('6000a590c976ae2e40e67e97') }, (error, user) => {
+    //     if (error) {
+    //         return console.log('Unable to fetch!')
+    //     }
 
-        console.log(user);
-    })
+    //     console.log(user);
+    // })
+
+    // db.collection('users').find({ age: 26 }).count((error, count) => {
+    //     console.log(count);
+    // })
+
 
 })
