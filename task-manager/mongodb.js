@@ -32,12 +32,21 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     //     console.log(count);
     // })
 
-    db.collection('users').findOne({ _id: ObjectID('6004cc52c3daec32e40f2777') }, (error, user) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log(user);
-    })
+    // db.collection('users').findOne({ _id: ObjectID('6004cc52c3daec32e40f2777') }, (error, user) => {
+    //     if (error) {
+    //         return console.log(error);
+    //     }
+    //     console.log(user);
+    // })
 
+    db.collection('users').updateOne({
+        _id: ObjectID('6004cc52c3daec32e40f2777')
+    }, {
+
+    }).then((result) => {
+        console.log(result);
+    }).catch((error) => {
+        console.log(error);
+    })
 
 })
