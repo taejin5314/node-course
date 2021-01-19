@@ -39,16 +39,18 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     //     console.log(user);
     // })
 
-    db.collection('users').updateOne({
-        _id: ObjectID('6004cc52c3daec32e40f2777')
-    }, {
-        $inc: {
-            age: 1
-        }
-    }).then((result) => {
-        console.log(result);
-    }).catch((error) => {
-        console.log(error);
-    })
+    // db.collection('users').updateOne({
+    //     _id: ObjectID('6004cc52c3daec32e40f2777')
+    // }, {
+    //     $inc: {
+    //         age: 1
+    //     }
+    // }).then((result) => {
+    //     console.log(result);
+    // }).catch((error) => {
+    //     console.log(error);
+    // })
+
+
 
 })
