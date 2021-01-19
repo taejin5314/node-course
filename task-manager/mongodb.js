@@ -4,14 +4,14 @@
 // const MongoClient = mongodb.MongoClient;
 // const ObjectID = mongodb.ObjectID;
 
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient, ObjectID, ObjectId } = require('mongodb');
 
 const connectionURL = 'mongodb://127.0.0.1:27017';
 const databaseName = 'task-manager';
 
 const id = new ObjectID()
-console.log(id);
-console.log(id.getTimestamp())
+// console.log(id);
+// console.log(id.getTimestamp())
 
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) {
@@ -31,6 +31,13 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     // db.collection('users').find({ age: 26 }).count((error, count) => {
     //     console.log(count);
     // })
+
+    db.collection('users').findOne({ _id: ObjectID('6004cc52c3daec32e40f2777') }, (error, user) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log(user);
+    })
 
 
 })
