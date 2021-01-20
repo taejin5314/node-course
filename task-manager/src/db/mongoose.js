@@ -7,40 +7,40 @@ mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
 
 const User = mongoose.model('User', {
     name: {
-        type: String
+        type: String,
+        required: true
     },
     age: {
         type: Number
     }
 })
 
-// const me = new User({
-//     name: 'Taejin',
-//     age: 26
-// })
+const me = new User({
+    name: 'Mike'
+})
 
-// me.save().then(() => {
-//     console.log(me);
-// }).catch((error) => {
-//     console.log('Error!', error)
-// })
+me.save().then(() => {
+    console.log(me);
+}).catch((error) => {
+    console.log('Error!', error)
+})
 
 const Task = mongoose.model('Task', {
     name: {
-        type: String
+        type: String,
     },
     description: {
         type: String
     }
 })
 
-const Todo = new Task({
-    name: 'Laundry',
-    description: 'Finish until 9 p.m.'
-})
+// const Todo = new Task({
+//     name: 'Laundry',
+//     description: 'Finish until 9 p.m.'
+// })
 
-Todo.save().then(() => {
-    console.log(Todo);
-}).catch((error) => {
-    console.log('Error!', error)
-})
+// Todo.save().then(() => {
+//     console.log(Todo);
+// }).catch((error) => {
+//     console.log('Error!', error)
+// })
