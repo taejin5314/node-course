@@ -45,25 +45,38 @@ const User = mongoose.model('User', {
     }
 })
 
-const me = new User({
-    name: 'Mike',
-    email: 'mike1346@gmail.com',
-    password: 'password12345'
-})
+// const me = new User({
+//     name: 'Mike',
+//     email: 'mike1346@gmail.com',
+//     password: 'password12345'
+// })
 
-me.save().then(() => {
-    console.log(me);
-}).catch((error) => {
-    console.log('Error!', error)
-})
+// me.save().then(() => {
+//     console.log(me);
+// }).catch((error) => {
+//     console.log('Error!', error)
+// })
 
 const Task = mongoose.model('Task', {
     description: {
         type: String,
+        required: true,
+        trim: true,
     },
     completed: {
-        type: Boolean
+        type: Boolean,
+        default: false,
     }
+})
+
+const task = new Task({
+    description: '    Eat lunch',
+})
+
+task.save().then(() => {
+    console.log(task);
+}).catch((error) => {
+    console.log(error);
 })
 
 // const Todo = new Task({
