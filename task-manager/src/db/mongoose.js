@@ -48,7 +48,7 @@ const User = mongoose.model('User', {
 const me = new User({
     name: 'Mike',
     email: 'mike1346@gmail.com',
-    password: 'password1234'
+    password: 'password12345'
 })
 
 me.save().then(() => {
