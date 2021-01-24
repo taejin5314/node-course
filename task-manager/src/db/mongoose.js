@@ -58,11 +58,11 @@ me.save().then(() => {
 })
 
 const Task = mongoose.model('Task', {
-    name: {
+    description: {
         type: String,
     },
-    description: {
-        type: String
+    completed: {
+        type: Boolean
     }
 })
 
