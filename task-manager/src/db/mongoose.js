@@ -70,7 +70,7 @@ const Task = mongoose.model('Task', {
 })
 
 const task = new Task({
-    description: '   Eat lunch',
+    description: '  Eat lunch',
 })
 
 task.save().then(() => {
