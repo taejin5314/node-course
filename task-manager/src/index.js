@@ -63,11 +63,11 @@ app.get('/tasks/:id', (req, res) => {
 
     Task.findById(_id).then((task) => {
         if (!task) {
-            res.status(400).send();
+            res.status(404).send();
         }
         res.send(task);
     }).catch((e) => {
-        res.status(400).send(e);
+        res.status(500).send(e);
     })
 })
 
