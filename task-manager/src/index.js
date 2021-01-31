@@ -17,13 +17,6 @@ app.post('/users', async (req, res) => {
     } catch (e) {
         res.status(400).send(e);
     }
-
-
-    // user.save().then(() => {
-    //     res.status(201).send(user)
-    // }).catch((error) => {
-    //     res.status(400).send(error)
-    // });
 })
 
 app.get('/users', (req, res) => {
