@@ -9,3 +9,15 @@ Task.findByIdAndUpdate('6010817b3563ff3b3435dc72', { completed: false }).then((t
 }).catch((e) => {
     console.log(e);
 })
+
+const deleteTaskAndCount = async (id) => {
+    const task = await Task.findByIdAndDelete(id);
+    const count = await Task.count({ completed: false });
+    return count;
+}
+
+deleteTaskAndCount('6010817b3563ff3b3435dc72').then((count) => {
+    console.log(count);
+}).catch((e) => {
+    console.log(e);
+})
