@@ -9,7 +9,8 @@ const add = (a, b) => {
 }
 
 const doWork = async () => {
-    cont sum = await add(1, 99)
+    const sum = await add(1, 99);
+    return sum
 }
 
 doWork().then((result) => {
