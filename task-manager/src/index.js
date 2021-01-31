@@ -25,22 +25,25 @@ app.get('/users', async (req, res) => {
         const users = await User.find({});
         res.send(users);
     } catch (e) {
-        res.status(500).send(e);
+        res.status(500).send();
     }
 })
 
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', async (req, res) => {
     const _id = req.params.id;
 
-    User.findById(_id).then((user) => {
+    try {
+        const user = await User.findById(_id)
+
         if (!user) {
             return res.status(404).send();
         }
 
-        res.send(user);
-    }).catch((e) => {
+        res.status(200).send(user);
+    } catch (e) {
         res.status(500).send();
-    })
+    }
+
 })
 
 app.post('/tasks', (req, res) => {
