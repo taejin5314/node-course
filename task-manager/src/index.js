@@ -83,7 +83,7 @@ app.get('/tasks', async (req, res) => {
         const tasks = await Task.find({});
         res.send(tasks);
     } catch (e) {
-        res.status(500).send();
+        res.status(500).send(e);
     }
 })
 
