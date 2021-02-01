@@ -55,7 +55,7 @@ app.patch('/users/:id', async (req, res) => {
 
         res.send(user);
     } catch (e) {
-
+        res.status(500).send(e);
     }
 })
 
