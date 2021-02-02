@@ -8,7 +8,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json())
 
-const router = new express.Router()
+const router = new express.Router();
+router.get('/test', (req, res) => {
+    res.send('this is from my other router')
+})
 
 app.post('/users', async (req, res) => {
     const user = new User(req.body);
