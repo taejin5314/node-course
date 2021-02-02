@@ -12,6 +12,7 @@ const router = new express.Router();
 router.get('/test', (req, res) => {
     res.send('this is from my other router')
 })
+app.use(router);
 
 app.post('/users', async (req, res) => {
     const user = new User(req.body);
