@@ -14,3 +14,9 @@ app.use(taskRouter);
 app.listen(port, () => {
     console.log('server is up on port: ' + port);
 })
+
+const myFunction = async () => {
+
+}
+
+myFunction();
