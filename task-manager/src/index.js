@@ -15,3 +15,11 @@ app.listen(port, () => {
     console.log('server is up on port: ' + port);
 })
 
+const Task = require('./models/task');
+
+const main = async () => {
+    const task = await Task.findById('6024602ad08e9e6cb0557e68');
+    console.log(task.owner);
+}
+
+main();
