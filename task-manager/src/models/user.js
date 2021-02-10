@@ -49,6 +49,11 @@ const userSchema = new mongoose.Schema({
     }]
 })
 
+userSchema.methods.getPublicProfile = function () {
+    const user = this;
+
+}
+
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
     const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse');
