@@ -15,12 +15,3 @@ app.listen(port, () => {
     console.log('server is up on port: ' + port);
 })
 
-const pet = {
-    'name': 'Hodole',
-}
-
-pet.toJSON = function () {
-    return {};
-}
-
-console.log(JSON.stringify(pet))
