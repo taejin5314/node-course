@@ -27,7 +27,7 @@ router.get('/tasks', async (req, res) => {
     }
 })
 
-router.get('/tasks/:id', async (req, res) => {
+router.get('/tasks/:id', auth, async (req, res) => {
     const _id = req.params.id;
 
     try {
