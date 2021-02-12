@@ -102,6 +102,12 @@ userSchema.pre('save', async function (next) {
     next()
 })
 
+userSchema.pre('remove', async function (next) {
+    const user = this;
+
+    next();
+})
+
 const User = mongoose.model('User', userSchema)
 
 module.exports = User;
