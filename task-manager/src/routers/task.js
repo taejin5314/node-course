@@ -29,9 +29,7 @@ router.get('/tasks', auth, async (req, res) => {
         // const tasks = await Task.find({ owner: req.user._id });
         await req.user.populate({
             path: 'tasks',
-            match: {
-                completed: false
-            }
+            match
         }).execPopulate();
         res.send(req.user.tasks);
     } catch (e) {
@@ -88,7 +86,7 @@ router.delete('/tasks/:id', auth, async (req, res) => {
 
         res.send(task);
     } catch (e) {
-        res.status(400).send();
+        res.status(500).send();
     }
 })
 
